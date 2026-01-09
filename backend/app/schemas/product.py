@@ -18,7 +18,7 @@ class ProductBase(BaseModel):
 class ProductCreate(ProductBase):
     pass
 
-class ProductdResponse(BaseModel):
+class ProductResponse(BaseModel):
     id: int = Field(..., description="Unique ID")
     name: str
     description: Optional[str]
@@ -32,6 +32,6 @@ class ProductdResponse(BaseModel):
         form_attributes = True
 
 class ProductListResponse(BaseModel):
-    product: list[ProductdResponse]
+    product: list[ProductResponse]
     total: int = Field(..., description="Total number of products")
     
